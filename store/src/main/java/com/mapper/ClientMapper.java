@@ -1,6 +1,6 @@
 package com.mapper;
 
-import java.util.Set;
+import java.util.List;
 
 import com.model.Client;
 
@@ -8,5 +8,5 @@ public interface ClientMapper {
 
     public void insertClient(Client client);
 
-    public Set<Client> selectClients();
+    public List<Client> selectClients();
 }

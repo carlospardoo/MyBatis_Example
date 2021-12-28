@@ -1,14 +1,14 @@
 package com.main;
 
-import java.util.Set;
+import java.util.List;
 
-import com.conf.ClientService;
 import com.model.Client;
+import com.service.ClientService;
 
 public class ClientMain {
     public static void main(String[] args) {
 
-        Client client = new Client(2, "David", "Pardo", 457);
+        //Client client = new Client(2, "David", "Pardo", 457);
 
         ClientService cs = new ClientService();
 
@@ -20,7 +20,7 @@ public class ClientMain {
             System.out.println("Fallo al insertar");
         }*/
 
-        Set<Client> con = cs.getClients();
+        List<Client> con = cs.getClients();
         for(Client cli : con){
             System.out.println(cli.toString());
         }

@@ -1,15 +1,14 @@
-package com.conf;
+package com.service;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
+import com.conf.MyBatisUtil;
 import com.mapper.ClientMapper;
 import com.model.Client;
 
 import org.apache.ibatis.session.SqlSession;
 
 public class ClientService {
-
 
     public ClientService() {
         super();
@@ -35,8 +34,8 @@ public class ClientService {
         return hasInsert;
     }
 
-    public Set<Client> getClients(){
-        Set<Client> clients = null; //new HashSet<>()
+    public List<Client> getClients(){
+        List<Client> clients = null; //new HashSet<>()
         SqlSession session = new MyBatisUtil().getSession();
         if(session != null){
             try{

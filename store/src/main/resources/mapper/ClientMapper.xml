@@ -5,13 +5,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace = "com.mapper.ClientMapper" >
+    <resultMap id = "clientRMap" type = "com.model.Client" >
+        <id property = "id" column = "cli_id" />
+        <result property = "name" column = "cli_name" />
+        <result property = "lastname" column = "cli_lastname" />
+        <result property = "phone" column = "cli_phone" />
+    </resultMap>
 
     <insert id = "insertClient" useGeneratedKeys = "false" keyProperty = "cli_id" parameterType = "com.model.Client">
         insert into client(cli_id, cli_name, cli_lastname, cli_phone) 
         values(#{id}, #{name}, #{lastname}, #{phone})
     </insert>
 
-    <select id = "selectClients" resultType = "com.model.Client" >
+    <select id = "selectClients" resultMap = "clientRMap" >
         select *from client
     </select>
 
